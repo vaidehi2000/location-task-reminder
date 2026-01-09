@@ -1,16 +1,49 @@
-# React + Vite
+# Location Task Reminder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web application that reminds you about tasks when you're near specific locations.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add tasks with associated locations using Google Maps URLs
+- Automatic location tracking
+- Get notified when you're within 1 mile of a task location
+- Clean, simple interface
 
-## React Compiler
+## How It Works
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Add a task (e.g., "Buy drill")
+2. Add the location name (e.g., "Home Depot")
+3. Paste a Google Maps URL for that location
+4. Start location tracking
+5. Get notified automatically when you're nearby!
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- Vite
+- Tailwind CSS
+- Geolocation API
+- Notification API
+
+## Setup
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+```
+
+Open `http://localhost:5173` in your browser.
+
+## Usage
+
+1. Search for a location in Google Maps
+2. Copy the full URL from the address bar (or the shortened goo.gl link)
+3. Paste it when adding a task in the app
+4. Click "Start Location Tracking"
+5. Keep the browser tab open for tracking to work
+
+## Note
+
+This is a web app, so location tracking only works while the browser tab is open.
