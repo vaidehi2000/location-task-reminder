@@ -180,7 +180,6 @@ export default function LocationTaskApp() {
   };
 
   return (
-    // <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
     <div className="min-h-screen bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-700 p-4 relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -189,8 +188,7 @@ export default function LocationTaskApp() {
         <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
       </div>
 
-      <div className="max-w-4xl mx-auto relative z-10"></div>
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto relative z-10">
         <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
           <h1 className="text-3xl font-bold text-gray-800 mb-2 flex items-center gap-2">
             <MapPin className="text-indigo-600" />
