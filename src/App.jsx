@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MapPin, Plus, Trash2, Bell, Navigation, Link } from 'lucide-react';
+import { MapPin, Plus, Trash2, Bell, Navigation, Link, Check, Sparkles } from 'lucide-react';
 
 export default function LocationTaskApp() {
   const [tasks, setTasks] = useState([]);
@@ -10,6 +10,8 @@ export default function LocationTaskApp() {
   const [notifications, setNotifications] = useState([]);
   const [tracking, setTracking] = useState(false);
   const [notifiedTasks, setNotifiedTasks] = useState(new Set());
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [pulseEffect, setPulseEffect] = useState(false);
 
   // Request location permission and start tracking
   useEffect(() => {
@@ -154,6 +156,8 @@ export default function LocationTaskApp() {
     setTaskName('');
     setLocationName('');
     setGoogleMapsUrl('');
+    setShowSuccess(true);
+    setTimeout(() => setShowSuccess(false), 2000);
   };
 
   const deleteTask = (id) => {
@@ -189,6 +193,14 @@ export default function LocationTaskApp() {
       </div>
 
       <div className="max-w-4xl mx-auto relative z-10">
+        {/* Success Toast */}
+        {showSuccess && (
+          <div className="fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-2xl flex items-center gap-2 animate-bounce z-50">
+            <Check size={20} />
+            <span className="font-semibold">Task added successfully!</span>
+          </div>
+        )}
+
         <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
           <h1 className="text-3xl font-bold text-gray-800 mb-2 flex items-center gap-2">
             <MapPin className="text-indigo-600" />
